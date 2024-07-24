@@ -4,7 +4,7 @@
 
 
 // mqtt host, username, password 
-#define MQTT_HOST "https://vgecharger.com"
+#define MQTT_HOST "vgecharger.com"
 #define MQTT_USERNAME "admin"
 #define MQTT_PASSWORD "P@ssw0rd"
 
