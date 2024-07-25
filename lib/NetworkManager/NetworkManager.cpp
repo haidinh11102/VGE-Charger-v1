@@ -48,7 +48,7 @@ NetworkManager::NetworkManager() : server(80)
 // 
 // ==============================================
 void NetworkManager::saveWiFiCredentials() {
-    File file = LittleFS.open("/wifi_credentials5.txt", "w");
+    File file = LittleFS.open("/wifi_credentials9.txt", "w");
     if (!file) {
         Serial.println("Failed to open file for writing");
         return;
@@ -69,7 +69,7 @@ void NetworkManager::autoConnect() {
         return;
     }
 
-    File file = LittleFS.open("/wifi_credentials5.txt", "r");
+    File file = LittleFS.open("/wifi_credentials9.txt", "r");
   
     String ssid = file.readStringUntil('\n');
     ssid.trim();

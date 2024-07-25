@@ -56,6 +56,7 @@ class MqttController
         String createMacTopic();
         String ChargerTopic();
         String UnitsTopic();
+        String WiFiTopic();
 
 
     public:

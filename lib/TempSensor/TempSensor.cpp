@@ -1,6 +1,6 @@
 // =============================================================================
 // 
-//  Phần relay này không cần thiết lắm nhưng cứ để lại đã khi nào cần thì phát triển
+//  Phần relay này không cần thiết nhưng cứ để lại đã khi nào cần thì phát triển
 // 
 // =============================================================================
 #include "TempSensor.h"

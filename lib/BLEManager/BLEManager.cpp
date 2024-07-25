@@ -7,7 +7,7 @@ BLEManager::BLEManager()
 void BLEManager::begin() {
     Serial.begin(115200);
 
-    BLEDevice::init("VGE_1");
+    BLEDevice::init("VGE_1"); // phần khởi tạo buffer cho BLE
     pServer = BLEDevice::createServer();
     pServer->setCallbacks(new ServerCallbacks(*this));
 

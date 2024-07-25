@@ -331,6 +331,21 @@ String MqttController::UnitsTopic() {
     return String(UnitsCharger); // Trả về như một đối tượng String
 }
 
+// ==============================================
+//
+//                    wifiTopic
+//
+// ==============================================
+
+String MqttController::WiFiTopic() {
+    char WiFiCharger[150]; // Đảm bảo mảng này đủ lớn để chứa toàn bộ chuỗi
+    String mac = WiFi.macAddress();
+    mac.replace(":", "");
+    
+    snprintf(WiFiCharger, sizeof(WiFiCharger), "%s-%s/wifi", settings.outTopic, mac.c_str()); // An toàn hơn khi làm việc với chuỗi
+
+    return String(WiFiCharger); // Trả về như một đối tượng String
+}
 
 // ==============================================
 //
@@ -355,7 +370,7 @@ void MqttController::sendConfigWifi() {
     String json;
     serializeJson(doc, json);
 
-    String topic = createMacTopic(); // Gọi hàm để tạo topic mới
+    String topic = WiFiTopic(); // Gọi hàm để tạo topic mới
     Serial.print("Sending JSON message to ");
     Serial.print(topic);
     Serial.print(": ");
