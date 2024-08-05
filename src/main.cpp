@@ -7,7 +7,7 @@
 #include <NetworkManager.h>
 #include <MqttController.h>
 #include <ChargeController.h>
-// #include <EspNowReceiver.h>
+#include <EspNowReceiver.h>
 #include <BLEManager.h>
 
 #include "esp32_secrets.h"
@@ -19,7 +19,7 @@ NetworkManager networkManager;
 Pilot pilot;
 ChargeController chargeController(pilot);
 MqttController mqttController(networkManager, pilot, chargeController);
-// EspNowReceiver espNowReceiver;
+EspNowManager espNowReceiver;
 BLEManager bleManager;
 // ==============================================
 // 
@@ -43,7 +43,7 @@ void setup() {
 
   // kết nối wifi thành công thì đèn sáng
   digitalWrite(LED, HIGH);
-
+  espNowReceiver.init();
 
   // kết nối mqtt
   struct MqttSettings mqttSettings;
